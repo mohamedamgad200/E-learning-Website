@@ -3,10 +3,12 @@ import {
   BrowserModule,
   provideClientHydration,
 } from '@angular/platform-browser';
+import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -38,7 +40,6 @@ import { SideBarAdminComponent } from './component/administrator/side-bar-admin/
 import { ManagementAssignmentComponent } from './component/instructor/management-assignment/management-assignment.component';
 import { MonitoringPrograssComponent } from './component/instructor/monitoring-prograss/monitoring-prograss.component';
 import { StudentUploadeAssignmentComponent } from './component/student/student-uploade-assignment/student-uploade-assignment.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +72,7 @@ import { StudentUploadeAssignmentComponent } from './component/student/student-u
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
