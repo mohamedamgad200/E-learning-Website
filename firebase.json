@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "firebasecrud",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

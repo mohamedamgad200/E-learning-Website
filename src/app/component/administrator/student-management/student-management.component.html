@@ -1,0 +1,31 @@
+<div class="">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-bar-admin></app-side-bar-admin>
+        </div>
+        <div class="col-md-8 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Greeting -->
+                    <h5 class="card-title">Student Management</h5>
+                    <!-- Form to add course to student -->
+                    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="number" id="studentId" formControlName="studentId" class="form-control"
+                                placeholder="Enter Student ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="courseName">Course Name</label>
+                            <input type="text" id="courseName" formControlName="courseName" class="form-control"
+                                placeholder="Enter Course Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 d-block mx-auto">Add Student to
+                            Course</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

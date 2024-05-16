@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Form to upload file -->
+        <div class="col-md-8 mt-6">
+            <button class="btn btn-outline-primary mb-3" (click)="back()">Back</button>
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <!-- Input field for file selection -->
+                    <div>
+                        <input type="file" class="text-nowrap text-truncate file" (change)="selectFile($event)">
+                    </div>
+                    <!-- Input field for course name -->
+                    <div class="mb-3">
+                        <label for="courseName" class="form-label">Course Name</label>
+                        <input type="text" class="form-control" id="courseName" [(ngModel)]="courseName">
+                    </div>
+                    <!-- Upload button -->
+                    <div>
+                        <button type="button" class="btn btn-outline-warning" [disabled]="!selectedFiles || !courseName"
+                            (click)="uploadFile()">Upload</button>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="progress mt-2">
+                        <div class="progress-bar progress-bar-info" role="progressbar" [style.width.%]="percentage">
+                            {{percentage}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

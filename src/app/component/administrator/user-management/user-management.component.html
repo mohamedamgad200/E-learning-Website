@@ -1,0 +1,67 @@
+<div class="">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-bar-admin></app-side-bar-admin>
+        </div>
+        <div class="col-md-9 mt-3">
+            <div>
+                <h2>User Management</h2>
+                <button class="btn btn-primary mb-3" (click)="getUsers()">Get Users</button>
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>Active Users</h3>
+                        <table class="table mt-3" *ngIf="activeUsers && activeUsers.length > 0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>ID</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of activeUsers">
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.id }}</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm"
+                                            (click)="deleteUser(user.uid)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div *ngIf="!activeUsers || activeUsers.length === 0" class="text-muted mt-3">No active users
+                            found.</div>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Deactivated Users</h3>
+                        <table class="table mt-3" *ngIf="deactivatedUsers && deactivatedUsers.length > 0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>ID</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of deactivatedUsers">
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.id }}</td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm"
+                                            (click)="activateUser(user.uid)">Activate</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div *ngIf="!deactivatedUsers || deactivatedUsers.length === 0" class="text-muted mt-3">No
+                            deactivated users found.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

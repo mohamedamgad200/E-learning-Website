@@ -1,0 +1,18 @@
+.greeting {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.greeting h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.greeting p {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}

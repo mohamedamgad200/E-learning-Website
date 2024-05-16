@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  background-image: url(../../../../assets/elevated-view-laptop-stationeries-blue-backdrop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.success-message {
+  color: red;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 35px;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

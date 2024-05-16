@@ -1,0 +1,41 @@
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <div>
+                    <!-- Sidebar content -->
+                    <app-side-bar></app-side-bar>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Course Creation</h1>
+                    <form [formGroup]="courseForm" (ngSubmit)="createCourse()">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="form-control" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea id="description" class="form-control" formControlName="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="instructor">Instructor:</label>
+                            <input type="text" id="instructor" class="form-control" formControlName="instructor">
+                        </div>
+                        <!-- Add more input fields for other course properties as needed -->
+                        <button type="submit" class="btn btn-primary">Create Course</button>
+                    </form>
+                </div>
+            </div>
+            <div class=" manage text-center mt-3 ml-3 card">
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary" (click)=" uploade()">Upload File</button>
+                    <button type="button" class="btn btn-primary" (click)=" assigment()">Upload Assigments</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

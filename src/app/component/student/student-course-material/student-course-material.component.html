@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow py-3 sticky-top">
+    <div class="container">
+        <img src="../../../assets/logo.png" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="teachonelearning">Teach on elearning</a>
+                </li>
+            </ul>
+            <input type="search" class="form-control search-input mb-3 mt-3" placeholder="Search"
+                style="width: 500px; margin-right: 10px;">
+            <button type="button" class="btn btn-brande btn-primary btn-one" data-bs-toggle="modal"
+                data-bs-target="#myModal" (click)="navigateToHome()">
+                Back
+            </button>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Sum of Grades</h3>
+                        <p>{{ sumOfGrades }}</p>
+                    </div>
+                    <div class="card-body">
+                        <h3>Complete course</h3>
+                        <div *ngIf="complete !== null">
+                            <p *ngIf="complete">Course is completed</p>
+                            <p *ngIf="!complete">Course is not completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 offset-md-3">
+                <h2>Course Materials</h2>
+                <div *ngFor="let material of courseMaterials;let i=index" class="mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <ng-container [ngSwitch]="material.type">
+                                <ng-container *ngSwitchCase="'pdf'">
+                                    <a class="btn btn-primary btn-block" [href]="material.url" target="_blank">
+                                        Open PDF: {{ material.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'image'">
+                                    <a class="btn btn-primary btn-block" [href]="material.url" target="_blank">
+                                        View Image: {{ material.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'video'">
+                                    <a class="btn btn-primary btn-block" [href]="material.url" target="_blank">
+                                        Watch Video: {{ material.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchDefault>
+                                    <p>Unknown File: {{ material.displayName }}</p>
+                                </ng-container>
+                            </ng-container>
+                            <input type="checkbox" class="checkbox" (change)="onCheckboxChange(i, $event)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="assignments.length > 0">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Assignments</h2>
+                <div *ngFor="let assignment of assignments;let i=index" class="mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <ng-container [ngSwitch]="assignment.type">
+                                <ng-container *ngSwitchCase="'pdf'">
+                                    <a class="btn btn-primary btn-block" [href]="assignment.url" target="_blank">
+                                        Open PDF: {{ assignment.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'image'">
+                                    <a class="btn btn-primary btn-block" [href]="assignment.url" target="_blank">
+                                        View Image: {{ assignment.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="'video'">
+                                    <a class="btn btn-primary btn-block" [href]="assignment.url" target="_blank">
+                                        Watch Video: {{ assignment.displayName }}</a>
+                                </ng-container>
+                                <ng-container *ngSwitchDefault>
+                                    <p>Unknown File: {{ assignment.displayName }}</p>
+                                </ng-container>
+                            </ng-container>
+                            <input type="checkbox" class="checkbox" (change)="onCheckboxChange(i, $event)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Upload Assignments</h2>
+                <div class="mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <button class="btn btn-primary btn-block" (click)="navigateToUploade()">Upload
+                                Assignments</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Sum of Grades</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Sum of Grades</h3>
+                        <p>{{ sumOfGrades }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

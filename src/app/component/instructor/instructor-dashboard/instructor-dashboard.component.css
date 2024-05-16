@@ -1,0 +1,42 @@
+.side-bar {
+  background-color: #d1d0d0;
+  color: black;
+  height: 100vh;
+  width: 380px;
+  text-align: center;
+  padding: 20px; /* Add padding for spacing */
+}
+
+.image {
+  margin-top: 15px;
+  width: 300px;
+  height: 100px;
+}
+
+.btn {
+  margin: 40px 0; /* Add margin for spacing */
+  width: 300px;
+  font-size: 20px;
+}
+.manage .btn {
+  margin-left: 20px;
+}
+
+.greeting {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.greeting h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.greeting p {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}

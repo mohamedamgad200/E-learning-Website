@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-learning-d458c": {
+      "hosting": {
+        "firebasecrud": [
+          "e-learning-d458c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-learning-d458c"
+  }
+}

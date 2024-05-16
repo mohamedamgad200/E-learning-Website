@@ -1,0 +1,50 @@
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <div>
+                    <!-- Sidebar content -->
+                    <app-side-bar></app-side-bar>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Monitoring Progress</h4>
+                    <div class="form-group">
+                        <label for="courseName">Enter Course Name:</label>
+                        <input type="text" class="form-control" id="courseName" [(ngModel)]="courseName"
+                            placeholder="Enter course name">
+                    </div>
+                    <button class="btn btn-primary mt-3" (click)="getCourseStudents()">Get Students</button>
+                    <hr>
+                    <!-- Display students here -->
+                    <div *ngIf="students.length > 0">
+                        <h5>Students enrolled in {{ courseName }}</h5>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" *ngFor="let student of students">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>{{ student.id }}</div>
+                                            <div>{{ student.name }}</div>
+                                            <div>{{ student.email }}</div>
+                                            <div>Status: {{ student.course.completed ? 'Completed' : 'Not Completed' }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div *ngIf="students.length === 0 && courseName">
+                        <p>No students found for course '{{ courseName }}'</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
